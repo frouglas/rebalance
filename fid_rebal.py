@@ -42,6 +42,7 @@ for i in range(0,len(symbols)):
     if symbols[i]=="FDRXX**":
         props.append(0)
         cashAvail = values[i]
+        print "total cash available: $" + str(cashAvail)
     else:
         if abs(0.3 * totalVal - values[i]) < abs(0.1 * totalVal - values[i]):
             props.append(0.3)
@@ -80,6 +81,6 @@ for i in range(0,len(symbols)):
     else:
         if cashAlloc[i] > 0:
             print "BUY " + symbols[i]
-            print "     " + str(cashAlloc[i])
+            print "     $" + str(cashAlloc[i])
         else:
             print "NO ACTION ON " + symbols[i]
