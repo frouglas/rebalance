@@ -58,7 +58,10 @@ cashAlloc = np.zeros_like(diff)
 diff = diff * (diff > 0)
 
 while cashAvail > 0:
-    props = (props * (diff > 0) / np.sum(props * (diff >0)))    
+    if np.any(diff>0):    
+        props = (props * (diff > 0) / np.sum(props * (diff >0)))
+    else:
+        break    
     thisAlloc = np.round(cashAvail * props, 2)
     if np.all(thisAlloc == np.minimum(thisAlloc, diff)):
         cashAlloc = cashAlloc + thisAlloc
