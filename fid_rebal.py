@@ -10,12 +10,11 @@ import csv
 import datetime
 import numpy as np
 
-dirLoc = "S:\\Dougs_Documents\\gDrive\\random other\\"
 fileBase = "Portfolio_Position_"
 
 todayDate = datetime.date.today()
 
-fileName = dirLoc + fileBase + todayDate.strftime("%b-%d-%Y") + ".csv"
+fileName = fileBase + todayDate.strftime("%b-%d-%Y") + ".csv"
 rowNum = 0
 symbols = []
 values = []
