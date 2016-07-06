@@ -62,7 +62,7 @@ while cashAvail > 0:
         props = (props * (diff > 0) / np.sum(props * (diff >0)))
     else:
         break    
-    thisAlloc = np.round(cashAvail * props, 2)
+    thisAlloc = np.trunc(cashAvail * props * 100)/100
     if np.all(thisAlloc == np.minimum(thisAlloc, diff)):
         cashAlloc = cashAlloc + thisAlloc
         cashAvail -= np.sum(thisAlloc)
